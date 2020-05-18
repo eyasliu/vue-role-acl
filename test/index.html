@@ -16,6 +16,12 @@
       <button @click="$acl.change('login')">set login</button>
       <button @click="$acl.change('editor')">set editor</button>
       <button @click="$acl.change('login', 'editor')">set login & editor</button>
+      <button @click="$acl.setRules({
+        admin: '*',
+        login: ['read', 'list'],
+        editor: ['read', 'list', 'edit', 'delete'],
+      })">set rules</button>
+
     </p>
     <div>
       <b>component</b>
@@ -67,6 +73,7 @@
     var vm = new Vue({
       router,
       el: '#app',
+
     })
   </script>
 </body>

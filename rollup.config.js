@@ -23,7 +23,7 @@ export default {
     file: 'dist/vue-role-acl.min.js',
     format: 'umd',
   }],
-  // exports: 'named',
+  exports: 'named',
   // moduleName: 'VueRoleAcl',
   external: ['vue']
 }

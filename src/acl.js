@@ -71,6 +71,10 @@ export class RoleAcl{
       return pers
     }, [])
   }
+  setRules(v) {
+    this.rules = v
+    emit.emit(changeEvt)
+  }
   check(...permissions) {
     const allows = this.allowPermissions
     if (~allows.indexOf('*')) {
