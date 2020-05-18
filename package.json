@@ -1,31 +1,36 @@
 {
-  "name": "vue-role-permission",
+  "name": "vue-role-acl",
   "version": "0.0.1",
-  "description": "Mobx integration for Vue.js.",
-  "main": "src/index.js",
+  "description": "Vue role permission manager",
+  "main": "dist/vue-role-acl.js",
   "scripts": {
-    "clean": "rm -rf lib",
-    "build": "npm run clean && rm -rf dist && rollup -c"
+    "clean": "rm -rf lib && rm -rf dist",
+    "build": "npm run clean && rollup -c",
+    "dev": "npm run clean && rollup -c -w"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eyasliu/vue-role-permission.git"
+    "url": "git+https://github.com/eyasliu/vue-role-acl.git"
   },
   "keywords": [
-    "vue"
+    "vue",
+    "acl",
+    "role",
+    "permission"
   ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/eyasliu/vue-role-permission/issues"
+    "url": "https://github.com/eyasliu/vue-role-acl/issues"
   },
-  "homepage": "https://github.com/eyasliu/vue-role-permission#readme",
+  "homepage": "https://github.com/eyasliu/vue-role-acl#readme",
   "devDependencies": {
     "@babel/core": "^7.8.0",
-    "@babel/preset-env": "^7.8.0",
-    "babel-preset-env": "^1.7.0",
-    "@types/jest": "^20.0.5",
-    "babel-jest": "20",
-    "rollup": "^0.45.2",
+    "@babel/preset-env": "^7.9.6",
+    "@rollup/plugin-babel": "^5.0.0",
+    "rollup": "^2.10.2",
+    "rollup-plugin-babel-minify": "^10.0.0",
+    "mitt": "^1.2.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "vue": "^2.4.2"
   },
   "peerDependencies": {
