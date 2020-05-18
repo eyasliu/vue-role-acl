@@ -2,7 +2,7 @@
   "name": "vue-role-acl",
   "version": "0.0.2",
   "description": "Vue role permission manager",
-  "main": "dist/vue-role-acl.js",
+  "src": "dist/vue-role-acl.js",
   "scripts": {
     "clean": "rm -rf lib && rm -rf dist",
     "build": "npm run clean && rollup -c",
@@ -17,6 +17,10 @@
     "acl",
     "role",
     "permission"
+  ],
+  "files": [
+    "src/",
+    "dist/"
   ],
   "license": "Apache-2.0",
   "bugs": {

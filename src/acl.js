@@ -32,7 +32,7 @@ export class RoleAcl{
       } else {
         const p = notfound.path || notfound
         if (from.path !== p) {
-          router.push(p)
+          next({ path: p, query: to.query })
         }
       }
     })
@@ -73,7 +73,6 @@ export class RoleAcl{
   }
   check(...permissions) {
     const allows = this.allowPermissions
-    console.log(allows)
     if (~allows.indexOf('*')) {
       return true
     }

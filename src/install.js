@@ -6,7 +6,7 @@ export default (Vue, opts) => {
 
   const $acl = new RoleAcl(opts)
 
-  function created() {
+  function beforeCreate() {
     const vm = this
     vm.$acl = $acl
     vm.$_vueRoleAclListenFn = () => {
@@ -20,7 +20,7 @@ export default (Vue, opts) => {
   }
 
   Vue.mixin({
-    created,
+    beforeCreate,
     beforeDestroy,
   })
 }

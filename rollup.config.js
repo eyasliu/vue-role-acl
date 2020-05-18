@@ -4,13 +4,13 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 
 export default {
   input: 'src/index.js',
-  include: ['mitt'],
+  // include: ['mitt'],
   plugins: [
     // babel({
     //   babelHelpers: 'bundled',
     //   exclude: 'node_modules/**'
     // }),
-    nodeResolve({ jsnext: true, main: false })
+    // nodeResolve({ jsnext: true, main: false })
   ],
   output: [{
     name: 'VueRoleAcl',
