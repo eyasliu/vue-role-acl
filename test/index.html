@@ -11,6 +11,12 @@
   <div id="app">
     <h1>vue role acl DEMO</h1>
     <p>current role: {{$acl.currentRoles}}</p>
+    <p>
+      <button @click="$acl.change('admin')">set admin</button>
+      <button @click="$acl.change('login')">set login</button>
+      <button @click="$acl.change('editor')">set editor</button>
+      <button @click="$acl.change('login', 'editor')">set login & editor</button>
+    </p>
     <div>
       <b>component</b>
       <p v-if="$acl.check('read')">user can read</p>

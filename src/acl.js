@@ -86,7 +86,8 @@ export class RoleAcl{
 
 export default function(vm, acl) {
   vm.$acl = acl
-  emit.on(changeEvt, () => {
+  const listenFn = () => {
     vm.$forceUpdate()
-  })
+  }
+  emit.on(changeEvt, listenFn)
 }

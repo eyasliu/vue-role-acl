@@ -1,6 +1,6 @@
 {
   "name": "vue-role-acl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue role permission manager",
   "main": "dist/vue-role-acl.js",
   "scripts": {
