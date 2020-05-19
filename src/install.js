@@ -1,4 +1,4 @@
-import injectAcl, { RoleAcl } from './acl'
+import RoleAcl from './acl'
 import emit, { changeEvt } from './emit'
 
 

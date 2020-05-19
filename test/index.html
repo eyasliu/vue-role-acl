@@ -52,7 +52,7 @@
       routes: [
         { path: '/read', component: { template: '<p>read</p>' }, meta: { rule: ['read'] } },
         { path: '/edit', component: { template: '<p>edit</p>' }, meta: { rule: ['edit'] } },
-        { path: '/delete', component: { template: '<p>delete</p>' }, meta: { rule: ['delete'] } },
+        { path: '/delete', component: { template: '<p>delete</p>' }, meta: { rule: ['delete'], ruleFail: '/read' } },
         { path: '/list', component: { template: '<p>list</p>' }, meta: { rule: ['list'] } },
         { path: '/public', component: { template: '<p>public</p>' } },
         { path: '/not-found', component: { template: '<p>not-found</p>' } },
@@ -60,9 +60,9 @@
     })
 
     Vue.use(VueRoleAcl, {
-      initial: 'public',
+      initial: ['public'],
       router,
-      notfound: '/not-found',
+      // ruleFail: '/not-found',
       rules: {
         '*': ['read'],
         admin: '*',

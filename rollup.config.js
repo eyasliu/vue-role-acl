@@ -1,29 +1,22 @@
 import minify from "rollup-plugin-babel-minify";
-import nodeResolve from 'rollup-plugin-node-resolve';
-// import babel from '@rollup/plugin-babel'
+import fs from 'fs'
 
 export default {
-  input: 'src/index.js',
-  // include: ['mitt'],
-  plugins: [
-    // babel({
-    //   babelHelpers: 'bundled',
-    //   exclude: 'node_modules/**'
-    // }),
-    // nodeResolve({ jsnext: true, main: false })
-  ],
+  input: 'lib/index.js',
   output: [{
     name: 'VueRoleAcl',
     file: 'dist/vue-role-acl.js',
-    format: 'umd'
+    format: 'umd',
+    intro: fs.readFileSync('node_modules/regenerator-runtime/runtime.js').toString()
   }, {
     compact: true,
     plugins: [minify({ comments: false })],
     name: 'VueRoleAcl',
     file: 'dist/vue-role-acl.min.js',
     format: 'umd',
+    intro: fs.readFileSync('node_modules/regenerator-runtime/runtime.js').toString()
   }],
-  exports: 'named',
+  // exports: 'named',
   // moduleName: 'VueRoleAcl',
   external: ['vue']
 }
